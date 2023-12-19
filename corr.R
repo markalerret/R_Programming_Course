@@ -24,13 +24,20 @@ corr <- function(directory, threshold = 0){
   
   #fill nitrates and sulfates vectors
   for(monitor in aboveThreshold){
-    #pull table of each monitor and set the columns of pollutants to their own vetor
+    #pull table of each monitor and set the columns of pollutants to their own vector
     table <- read.csv(files[monitor])
-    nitr <- table["nitrate"]
-    sulf <- table["sulfate"]
+    table_complete <- table[complete.cases(table), ]
+    nitr <- table_complete["nitrate"]
+    sulf <- table_complete["sulfate"]
     
-    #remove NAs
+    #data frame with just the pollutants
+    df <- data.frame(sulf, nitr)
     
+    #correlation
+    corr <- cor(df[1], df[2])
+    
+    #append this correlation to list of correlations
+    cors <- append(cors, corr)
   }
   
   cors
