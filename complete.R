@@ -1,6 +1,6 @@
 complete <- function(directory, id = 1:332){
   #directory name
-  path <- paste("C:/Users/16175/Desktop/Coding Projects/R/R_Programming_Course/", directory, sep = "")
+  path <- paste("C:/Users/16175/Desktop/Coding Projects/R/R_Programming_Course/Week-2-R/", directory, sep = "")
   
   #set directory
   setwd(path)

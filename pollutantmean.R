@@ -4,7 +4,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   measurements <- c()
   
   #directory
-  dir <- setwd(paste("C:/Users/16175/Desktop/Coding Projects/R/R_Programming_Course/", directory, sep = ""))
+  dir <- setwd(paste("C:/Users/16175/Desktop/Coding Projects/R/R_Programming_Course/Week-2-R/", directory, sep = ""))
   
   #desired files
   files <- list.files(dir)[id]
